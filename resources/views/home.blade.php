@@ -108,7 +108,7 @@
         border-radius: 100%;
         padding: 5%
     }
-    
+
   #hero {
   width: 100%;
   height: 100vh;
@@ -291,12 +291,12 @@
 }
 
 .serviceButton{
-  border-radius: 20px; 
-  background: linear-gradient(to right, orange, red); 
-  color: white; 
-  padding: 2%; 
-  padding-left: 7%; 
-  padding-right: 7%; 
+  border-radius: 20px;
+  background: linear-gradient(to right, orange, red);
+  color: white;
+  padding: 2%;
+  padding-left: 7%;
+  padding-right: 7%;
   position: absolute;
   top: 280px;
   right: 70px;
@@ -361,7 +361,7 @@
 
     {{-- Carousel Start --}}
     <div id="carousel" style="margin-top: -10%; margin-bottom: 8%">
-        @foreach ($pr as $promo)
+        @foreach ($promos as $promo)
         <div class="slidePromo"><a href="#"><img src="{{Storage::url($promo->photo)}}" style="height:250px; width:400px;" class="homeImage"></a></div>
         @endforeach
 
@@ -458,12 +458,12 @@
 
     <!-- Hero Visit Homestay and Culinary Start -->
 
-  @foreach ($des as $destination)
-  @endforeach
+  // @foreach ($destinations as $destination)
+  // @endforeach
+  //
+  // @foreach ($culinaries as $culinary)
+  // @endforeach
 
-  @foreach ($cul as $culinary)
-  @endforeach
-    
     <div class="service">
       <div style="text-align: center" class="serviceTittle">
           <h1 style="font-weight: bold; color: #4CC417">OUR SERVICE PRODUCT</h1>
@@ -491,7 +491,7 @@
                     <a href="/homestay"><button class="serviceButton">See More</button></a>
                   <p class="mt-3"> Menjelajahi makanan-makanan yang enak!</p>
               </div>
-          </div> 
+          </div>
         </div>
       </div>
     </div>

@@ -3,3 +3,5 @@
 /tests
 /storage/framework
 /storage/logs
+
+.env
