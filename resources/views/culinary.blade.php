@@ -79,9 +79,9 @@
             <br> <br>
 
             <div id="list-item" style="width: 90%; display:inline-block">
-                @foreach ($culi as $data)
+                @foreach ($culinaries as $data)
                 <div style="width: 30%; margin: 1%; display:inline-block">
-                    
+
                     <td><img src="{{Storage::url($data->photo)}}" alt="" height="225px" width="275px"></td>
                     <p style="font-weight: bold">{{$data->name}}</p>
                     <button class="openbtnCulinary" onclick="openForm('{{ $data->id }}')">More</button>
@@ -94,7 +94,7 @@
     <!------------------------------------- Popup-Gambar-Start -------------------------->
 
 
-@foreach ($culi as $data)
+@foreach ($culinaries as $data)
 <div id="myOverlay{{$data->id}}" class="overlayCulinary">
     <div class="wrapCulinary">
         <span class="ratingCulinary" title="Rating">
@@ -207,7 +207,7 @@
                     }
                     $("#list-item").html(html);
                     console.log(data)
-                
+
                 }
             })
         });

@@ -21,32 +21,6 @@ class ViewController extends Controller
 
 
 
-    public function indexCulinary(){
-        $data = Culinary::all();
-        return view('culinary', ['culi'=>$data]);
-    }
-
-    public function sortCulinary($id){
-        if ($id == 1){
-            $data = Culinary::orderBy('price')->get();
-        }
-        else if ($id == 2){
-            $data = Culinary::orderBy('price', 'desc')->get();
-        }
-        else if ($id == 3){
-            $data = Culinary::orderBy('like', 'desc')->get();
-        }
-        return view('culinary', ['culi'=> $data]);
-    }
-
-    public function filterCulinary(Request $request){
-        $data = Culinary::all();
-        if($request->ajax()){
-            $pho=Photo::query()->where(['category_id'=>1])->get();
-            return response()->json(['homes'=>$data, 'pho'=>$pho]);
-        }
-        return view('culinary', ['culi'=>$data]);
-    }
     public function indexSouvenir(){
         $data = Souvenir::all();
         return view('souvenir', ['sou'=>$data]);

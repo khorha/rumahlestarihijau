@@ -22,12 +22,20 @@ Route::get('/login', [AuthController::class, 'loginPage'])->name('login');
 Route::get('/profile', [ProfileController::class, 'profilePage'])->name('profile');
 
 Route::get('/homestay', [HomestayController::class, 'homestayPage'])->name('homestay');
+Route::get('/culinary', [CulinaryController::class, 'culinaryPage'])->name('culinary');
 
-// todo: remove
-Route::get('/homestay/sort_by={id}', [HomestayController::class, 'sortHomestay']);
-Route::get('/homestay/filter_by={id}', [HomestayController::class, 'filterHomestayFacilities']);
-Route::get('/homestay/filter', [HomestayController::class, 'filterHomestay'])->name('filter');
+Route::get('/souvenir', [ViewController::class, 'indexSouvenir'])->name('souvenir');
+Route::get('/promo', [ViewController::class, 'indexPromo'])->name('promo');
 
+Route::get('/destination', [ViewController::class, 'indexDestination'])->name('destination');
+Route::get('/destinationDetail/{id}', [ViewController::class, 'indexDestinationDetail'])->name('destinationDetail');
+
+// Route::get('/promo', function(){
+//     return view('promo');
+// })->name('promo');
+
+Route::get('/contactUs', [ContactUsController::class, 'index']
+)->name('contactUs');
 
 // ' API '
 Route::post('/register', [AuthController::class, 'register']);
@@ -115,23 +123,6 @@ Route::delete('/deleteTablePromo/{id}', [RegisterController::class, 'deletePromo
 
 // -----------------------------------
 
-Route::get('/culinary', [ViewController::class, 'indexCulinary'])->name('culinary');
-Route::get('/culinary/sort_by={id}', [ViewController::class, 'sortCulinary']);
-Route::get('/culinary/filter', [ViewController::class, 'filterCulinary'])->name('filterc');
-
-Route::get('/souvenir', [ViewController::class, 'indexSouvenir'])->name('souvenir');
-
-Route::get('/promo', [ViewController::class, 'indexPromo'])->name('promo');
-
-Route::get('/destination', [ViewController::class, 'indexDestination'])->name('destination');
-Route::get('/destinationDetail/{id}', [ViewController::class, 'indexDestinationDetail'])->name('destinationDetail');
-
-// Route::get('/promo', function(){
-//     return view('promo');
-// })->name('promo');
-
-Route::get('/contactUs', [ContactUsController::class, 'index']
-)->name('contactUs');
 
 // Route::get('/clear', function() {
 //     Artisan::call('cache:clear');
